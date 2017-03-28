@@ -21,7 +21,7 @@ This plugin will cause all settings to be stored network wide and create one con
 
 This section describes how to install the plugin and get it working.
 
-1. Upload the plugin files to the `/wp-content/plugins/rocket-multisite` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/multisite-wp-rocket` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress Network
 4. Use WP-Rocket settings under Network Settings
 

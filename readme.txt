@@ -27,6 +27,10 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+### 1.0.1 ###
+
+* Bug: Fix hook name for updating option
+
 ### 1.0.0 ###
 
 * Initial version

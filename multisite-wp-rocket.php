@@ -26,7 +26,7 @@ function multisite_wp_rocket_plugins_loaded() {
 	if ( $error ) {
 		deactivate_plugins( basename( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . basename( __FILE__ ) );
 	} else {
-		add_action( 'pre_update_' . WP_ROCKET_SLUG, 'multisite_wp_rocket_update_option', 10, 3 );
+		add_action( 'pre_update_option_' . WP_ROCKET_SLUG, 'multisite_wp_rocket_update_option', 10, 3 );
 		add_action( 'pre_option_' . WP_ROCKET_SLUG, 'multisite_wp_rocket_get_option', 10, 2 );
 	}
 }

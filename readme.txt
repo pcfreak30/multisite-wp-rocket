@@ -27,10 +27,15 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
-### 1.0.1 ###
+### 0.1.2 ###
+
+* Improvement: Add support for subdomain multisite
+* General Change: Handle wp-rockets OOP code refactor with compatibility fallback to the old render function
+
+### 0.1.1 ###
 
 * Bug: Fix hook name for updating option
 
-### 1.0.0 ###
+### 0.1.0 ###
 
 * Initial version

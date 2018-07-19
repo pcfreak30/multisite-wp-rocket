@@ -3,7 +3,7 @@
  * Plugin Name: Multisite Support for WP Rocket
  * Plugin URI: https://github.com/pcfreak30/multisite-wp-rocket
  * Description: Plugin to enable WP-Rocket to be managed in multisite
- * Version: 0.1.1
+ * Version: 0.1.2
  * Author: Derrick Hammer
  * Author URI: https://www.derrickhammer.com
  * License: GPL3

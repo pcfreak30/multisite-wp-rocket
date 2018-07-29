@@ -34,7 +34,7 @@ function multisite_wp_rocket_plugins_loaded() {
 
 		return;
 	}
-	add_action( 'pre_update_option_' . WP_ROCKET_SLUG, 'multisite_wp_rocket_update_option', 10, 3 );
+	add_action( 'pre_update_option_' . WP_ROCKET_SLUG, 'multisite_wp_rocket_update_option', 11, 3 );
 	add_action( 'pre_option_' . WP_ROCKET_SLUG, 'multisite_wp_rocket_get_option', 10, 2 );
 	if ( is_subdomain_install() ) {
 		add_action( 'update_site_option_' . WP_ROCKET_SLUG, 'multisite_wp_rocket_after_save_options', 9 );

@@ -27,6 +27,10 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+### 0.1.3 ###
+
+* Bug: Ensure the update option hook runs after wp-rockets hooks
+
 ### 0.1.2 ###
 
 * Improvement: Add support for subdomain multisite

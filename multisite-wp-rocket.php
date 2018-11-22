@@ -12,6 +12,7 @@
 
 use WP_Rocket\Admin\Options;
 use WP_Rocket\Admin\Options_Data;
+use WP_Rocket\Admin\Settings\Beacon;
 use WP_Rocket\Admin\Settings\Page as Settings_Page;
 use WP_Rocket\Admin\Settings\Render as Settings_Render;
 use WP_Rocket\Admin\Settings\Settings;
@@ -84,7 +85,8 @@ function multisite_wp_rocket_display_options() {
 		$options            = new Options_Data( $options_api->get( 'settings', array() ) );
 		$settings           = new Settings( $options );
 		$settings_render    = new Settings_Render( WP_ROCKET_PATH . 'views/settings' );
-		$settings_page      = new Settings_Page( $settings_page_args, $settings, $settings_render );
+		$beancon    = new Beacon( $options);
+		$settings_page      = new Settings_Page( $settings_page_args, $settings, $settings_render, $beancon );
 
 		add_action( 'wp_ajax_rocket_toggle_option', [ $settings_page, 'toggle_option' ] );
 		add_filter( 'option_page_capability_' . WP_ROCKET_PLUGIN_SLUG, [ $settings_page, 'required_capability' ] );

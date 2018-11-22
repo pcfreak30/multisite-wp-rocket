@@ -27,6 +27,10 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+### 0.1.4 ###
+
+* Compatibility: API compatibility change with wp-rocket 3.2 in regards to setting page
+
 ### 0.1.3 ###
 
 * Bug: Ensure the update option hook runs after wp-rockets hooks

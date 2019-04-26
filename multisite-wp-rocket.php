@@ -10,6 +10,8 @@
  * Network: true
 */
 
+use WP_Rocket\Admin\Database\Optimization;
+use WP_Rocket\Admin\Database\Optimization_Process;
 use WP_Rocket\Admin\Options;
 use WP_Rocket\Admin\Options_Data;
 use WP_Rocket\Admin\Settings\Beacon;
@@ -81,12 +83,14 @@ function multisite_wp_rocket_display_options() {
 			'title'      => WP_ROCKET_PLUGIN_NAME,
 			'capability' => apply_filters( 'rocket_capacity', 'manage_options' ),
 		];
-		$options_api        = new Options( 'wp_rocket_' );
-		$options            = new Options_Data( $options_api->get( 'settings', array() ) );
-		$settings           = new Settings( $options );
-		$settings_render    = new Settings_Render( WP_ROCKET_PATH . 'views/settings' );
-		$beancon    = new Beacon( $options);
-		$settings_page      = new Settings_Page( $settings_page_args, $settings, $settings_render, $beancon );
+		$options        = new Options( 'wp_rocket_' );
+		$options_data = new Options_Data( $options->get( 'settings', array() ) );
+		$settings = new Settings( $options );
+		$settings_render = new Settings_Render( WP_ROCKET_PATH . 'views/settings' );
+		$beancon = new Beacon( $options_data );
+		$optimization_process = new Optimization_Process();
+		$optimization = new Optimization( $optimization_process );
+		$settings_page = new Settings_Page( $settings_page_args, $settings, $settings_render, $beancon, $optimization );
 
 		add_action( 'wp_ajax_rocket_toggle_option', [ $settings_page, 'toggle_option' ] );
 		add_filter( 'option_page_capability_' . WP_ROCKET_PLUGIN_SLUG, [ $settings_page, 'required_capability' ] );

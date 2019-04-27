@@ -27,6 +27,10 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+### 0.1.6 ###
+
+* Bug: Fix bug introduced in 0.1.5 due to incorrect use of API when building setting page
+
 ### 0.1.5 ###
 
 * Compatibility: API compatibility change with wp-rocket 3.3 in regards to setting page

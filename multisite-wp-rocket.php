@@ -85,7 +85,7 @@ function multisite_wp_rocket_display_options() {
 		];
 		$options        = new Options( 'wp_rocket_' );
 		$options_data = new Options_Data( $options->get( 'settings', array() ) );
-		$settings = new Settings( $options );
+		$settings = new Settings( $options_data );
 		$settings_render = new Settings_Render( WP_ROCKET_PATH . 'views/settings' );
 		$beancon = new Beacon( $options_data );
 		$optimization_process = new Optimization_Process();

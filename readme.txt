@@ -29,7 +29,7 @@ This section describes how to install the plugin and get it working.
 
 ### 0.1.7 ###
 
-* Enhancement: Use rocket_container filter to get service container and dom't build new instances ourselves
+* Enhancement: Use rocket_container filter to get service container and don't build new instances ourselves
 
 ### 0.1.6 ###
 

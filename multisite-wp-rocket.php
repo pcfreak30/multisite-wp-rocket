@@ -10,15 +10,6 @@
  * Network: true
 */
 
-use WP_Rocket\Admin\Database\Optimization;
-use WP_Rocket\Admin\Database\Optimization_Process;
-use WP_Rocket\Admin\Options;
-use WP_Rocket\Admin\Options_Data;
-use WP_Rocket\Admin\Settings\Beacon;
-use WP_Rocket\Admin\Settings\Page as Settings_Page;
-use WP_Rocket\Admin\Settings\Render as Settings_Render;
-use WP_Rocket\Admin\Settings\Settings;
-
 /**
  * Deactivate and show error if WP-Rocket is missing
  *
@@ -78,19 +69,10 @@ function multisite_wp_rocket_display_options() {
 	ob_start();
 
 	if ( class_exists( '\WP_Rocket\Plugin' ) ) {
-		$settings_page_args = [
-			'slug'       => WP_ROCKET_PLUGIN_SLUG,
-			'title'      => WP_ROCKET_PLUGIN_NAME,
-			'capability' => apply_filters( 'rocket_capacity', 'manage_options' ),
-		];
-		$options        = new Options( 'wp_rocket_' );
-		$options_data = new Options_Data( $options->get( 'settings', array() ) );
-		$settings = new Settings( $options_data );
-		$settings_render = new Settings_Render( WP_ROCKET_PATH . 'views/settings' );
-		$beancon = new Beacon( $options_data );
-		$optimization_process = new Optimization_Process();
-		$optimization = new Optimization( $optimization_process );
-		$settings_page = new Settings_Page( $settings_page_args, $settings, $settings_render, $beancon, $optimization );
+		/** @var \League\Container\Container $container */
+		$container = apply_filters( 'rocket_container', '' );
+
+		$settings_page = $container->get( 'settings_page' );
 
 		add_action( 'wp_ajax_rocket_toggle_option', [ $settings_page, 'toggle_option' ] );
 		add_filter( 'option_page_capability_' . WP_ROCKET_PLUGIN_SLUG, [ $settings_page, 'required_capability' ] );

@@ -4,7 +4,7 @@ Contributors: pcfreak30
 Donate link: http://www.paypal.me/pcfreak30
 Tags: wp-rocket, multisite
 Requires at least: 4.2.0
-Tested up to: 4.9.8
+Tested up to: 5.3.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -26,6 +26,10 @@ This section describes how to install the plugin and get it working.
 4. Use WP-Rocket settings under Network Settings
 
 == Changelog ==
+
+### 0.1.7 ###
+
+* Enhancement: Use rocket_container filter to get service container and dom't build new instances ourselves
 
 ### 0.1.6 ###
 
